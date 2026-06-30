@@ -1,0 +1,37 @@
+:root{
+  --bg:#04060f;--bg2:#070b1e;--bg3:#0a0f2e;--bg4:#0d1238;--bg5:#111640;
+  --np:#7c3aed;--np2:#a78bfa;--nc:#06b6d4;--nc2:#67e8f9;
+  --pink:#ec4899;--gold:#f59e0b;--green:#10b981;--red:#ef4444;
+  --orange:#f97316;--accent:#a78bfa;
+  --glass:rgba(255,255,255,0.04);--glass2:rgba(255,255,255,0.07);
+  --gb:rgba(255,255,255,0.10);--gbl:rgba(255,255,255,0.14);
+  --t1:#f8fafc;--t2:rgba(248,250,252,0.65);--t3:rgba(248,250,252,0.38);
+  --t4:rgba(248,250,252,0.20);--sub:rgba(248,250,252,0.38);
+  --text:#f8fafc;
+  --grad:linear-gradient(135deg,#7c3aed,#06b6d4);
+  --gradp:linear-gradient(135deg,#ec4899,#7c3aed);
+  --gradg:linear-gradient(135deg,#10b981,#06b6d4);
+  --accentg:linear-gradient(135deg,#7c3aed,#a78bfa);
+  --pg:rgba(124,58,237,0.35);--cg:rgba(6,182,212,0.3);
+  --pkgl:rgba(236,72,153,0.25);
+  --border:rgba(255,255,255,0.09);
+  --shadow:0 8px 32px rgba(0,0,0,.6);
+  --holo:linear-gradient(115deg,#7c3aed 0%,#06b6d4 28%,#ec4899 55%,#f59e0b 75%,#7c3aed 100%);
+  --holo-soft:linear-gradient(115deg,rgba(124,58,237,.35),rgba(6,182,212,.35),rgba(236,72,153,.35));
+  --lg-bg:rgba(255,255,255,0.045);--lg-bg2:rgba(255,255,255,0.085);
+  --lg-border:rgba(255,255,255,0.16);--lg-shine:rgba(255,255,255,0.55);--lg-blur:22px;
+  --shadow-cin:0 20px 60px -15px rgba(0,0,0,0.65),0 8px 24px -8px rgba(124,58,237,0.25);
+  --shadow-glo:0 0 40px rgba(124,58,237,0.25),0 0 80px rgba(6,182,212,0.12);
+  --amb-day:radial-gradient(ellipse at 30% 0%,rgba(245,158,11,0.10),transparent 60%);
+  --amb-eve:radial-gradient(ellipse at 70% 0%,rgba(236,72,153,0.12),transparent 60%);
+  --amb-night:radial-gradient(ellipse at 50% 0%,rgba(124,58,237,0.14),transparent 60%);
+  --nav-h:64px;--radius:16px;--ease:cubic-bezier(.4,0,.2,1);
+}
+[data-theme=light]{
+  --bg:#f0f4ff;--bg2:#ffffff;--bg3:#e8eeff;--bg4:#dde5ff;--bg5:#d0daff;
+  --text:#0a0f2e;--sub:rgba(10,15,46,0.5);--border:rgba(124,58,237,0.12);
+  --glass:rgba(124,58,237,0.04);--glass2:rgba(124,58,237,0.08);
+  --t1:#0a0f2e;--t2:rgba(10,15,46,0.65);--t3:rgba(10,15,46,0.38);
+  --shadow:0 4px 24px rgba(0,0,0,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased}

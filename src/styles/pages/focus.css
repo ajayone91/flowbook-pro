@@ -1,0 +1,29 @@
+.skill-lvl{font-size:10px;color:var(--np2);font-weight:700;padding:2px 7px;border-radius:6px;background:rgba(124,58,237,.14);border:1px solid rgba(124,58,237,.25)}
+.skill-tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:7px}
+.skill-tag{font-size:9px;color:var(--t3);background:var(--glass2);border:1px solid var(--border);padding:2px 7px;border-radius:20px}
+.skill-bar-row{display:flex;align-items:center;gap:8px}
+.skill-bar{flex:1;height:4px;background:var(--glass2);border-radius:10px;overflow:hidden}
+.skill-bar-fill{height:100%;background:var(--grad);border-radius:10px;transition:width .8s var(--ease)}
+.skill-pct{font-size:11px;font-weight:700;color:var(--np2);min-width:30px;text-align:right}
+
+/* ─── CALENDAR ─── */
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:12px}
+.cal-hdr{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:5px}
+.cal-day-lbl{font-size:9px;font-weight:700;color:var(--t3);text-align:center;padding:3px 0;letter-spacing:.04em}
+.cal-day{aspect-ratio:1;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;border:1px solid transparent;position:relative;color:var(--t2)}
+.cal-day:hover{background:var(--glass);border-color:var(--border)}
+.cal-day.today{border-color:rgba(124,58,237,.5);color:var(--np2);font-weight:800}
+.cal-day.has-tasks::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--np2)}
+.cal-day.selected{background:var(--grad);color:#fff;border-color:transparent}
+.cal-day.other-month{opacity:.3}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.cal-month{font-size:15px;font-weight:800;letter-spacing:-.02em}
+.cal-arrow{width:30px;height:30px;border-radius:8px;background:var(--glass);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--t2);transition:all .2s}
+.cal-arrow:hover{background:var(--glass2);color:var(--t1)}
+
+/* ─── FOCUS MODE ─── */
+.focus-view{display:none;flex-direction:column;height:100%;background:linear-gradient(180deg,#020612,#040818);position:fixed;inset:0;z-index:300;animation:fadeUp .3s ease}
+.focus-view.active{display:flex}
+.focus-topbar{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;flex-shrink:0;background:rgba(2,6,18,.6);border-bottom:1px solid rgba(80,140,255,.1);backdrop-filter:blur(24px)}
+.focus-status-badge{display:flex;align-items:center;gap:5px;padding:3px 9px;border-radius:20px;background:rgba(13,110,253,.1);border:1px solid rgba(13,110,253,.28);font-size:9px;font-weight:800;color:#93c5fd;letter-spacing:.08em;text-transform:uppercase}
+.focus-status-dot{width:5px;height:5px;border-radius:50%;background:#34d399;box-shadow:0 0 8px #34d399;animation:fsdot 2.4s infinite}

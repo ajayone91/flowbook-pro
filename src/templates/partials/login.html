@@ -1,0 +1,29 @@
+<!-- ─── LOGIN ─── -->
+<div class="login-screen" id="loginScreen">
+<div class="login-card">
+  <div class="login-orb"></div>
+  <div class="login-badge">FlowBook Pro ✦ v1.0</div>
+  <div class="login-title">Tasks + Reading<br>Ek Jagah 🚀</div>
+  <div class="login-sub">TaskFlow AI × BOOKORA X — dono apps ka power ek hi app mein.</div>
+  <div id="loginPanel">
+    <div class="login-form">
+      <input class="login-input" id="loginEmail" type="email" placeholder="Email address" autocomplete="email"/>
+      <input class="login-input" id="loginPass" type="password" placeholder="Password" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"/>
+      <div class="login-err" id="loginErr"></div>
+    </div>
+    <button class="btn-full" onclick="doLogin()">Login Karo ✦</button>
+    <button class="guest-btn" onclick="guestLogin()">Guest ke roop mein continue karo →</button>
+    <div class="login-switch-txt">Account nahi hai? <span class="login-switch" onclick="toggleLoginMode()">Sign Up karo</span></div>
+  </div>
+  <div id="signupPanel" style="display:none">
+    <div class="login-form">
+      <input class="login-input" id="signupName" type="text" placeholder="Aapka naam" autocomplete="name"/>
+      <input class="login-input" id="signupEmail" type="email" placeholder="Email address" autocomplete="email"/>
+      <input class="login-input" id="signupPass" type="password" placeholder="Password (min 6 chars)" autocomplete="new-password" onkeydown="if(event.key==='Enter')doSignup()"/>
+      <div class="login-err" id="signupErr"></div>
+    </div>
+    <button class="btn-full" onclick="doSignup()">Account Banao 🎉</button>
+    <div class="login-switch-txt">Pehle se account hai? <span class="login-switch" onclick="toggleLoginMode()">Login karo</span></div>
+  </div>
+</div>
+</div>

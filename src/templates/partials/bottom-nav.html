@@ -1,0 +1,20 @@
+<!-- BOTTOM NAV -->
+<div class="bottom-nav" id="bottomNav">
+  <button class="bn-item active" id="bn-dashboard" onclick="showView('dashboard',document.getElementById('nb-dashboard'));setBN('dashboard')">
+    <div class="bn-icon">🏠</div><span class="bn-label">Home</span>
+  </button>
+  <button class="bn-item" id="bn-tasks" onclick="showView('tasks',document.getElementById('nb-tasks'));setBN('tasks')">
+    <div class="bn-icon">✅</div><span class="bn-label">Tasks</span>
+    <div class="bn-dot" id="bnDot" style="display:none"></div>
+  </button>
+  <button class="bn-item" id="bn-library" onclick="showView('library',document.getElementById('nb-library'));setBN('library')">
+    <div class="bn-icon">📚</div><span class="bn-label">Books</span>
+  </button>
+  <button class="bn-item" id="bn-ai" onclick="showView('ai',document.getElementById('nb-ai'));setBN('ai')">
+    <div class="bn-icon">🤖</div><span class="bn-label">AI</span>
+  </button>
+  <button class="bn-item" id="bn-settings" onclick="showView('settings',document.getElementById('nb-settings'));setBN('settings')">
+    <div class="bn-icon">⚙️</div><span class="bn-label">Settings</span>
+  </button>
+</div>
+<button class="fab" onclick="handleFAB()" title="Add">+</button>

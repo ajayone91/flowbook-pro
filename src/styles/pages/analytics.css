@@ -1,0 +1,6 @@
+@keyframes fsdot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.6}}
+.focus-body{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0;padding:14px;overflow-y:auto}
+.focus-time-num{font-family:'Space Mono','DM Mono',monospace;font-size:clamp(50px,7vw,80px);font-weight:700;letter-spacing:-.03em;color:#f0f8ff;line-height:1;text-shadow:0 0 40px rgba(147,197,253,.7),0 0 80px rgba(96,165,250,.3)}
+.focus-time-phase{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(147,197,253,.6);margin-top:4px;text-align:center}
+.focus-ring-svg{display:block;filter:drop-shadow(0 0 16px rgba(96,165,250,.4)) drop-shadow(0 0 36px rgba(96,165,250,.15))}
+.focus-clock{position:relative;margin-bottom:12px;flex-shrink:0}

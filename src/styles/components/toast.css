@@ -1,0 +1,8 @@
+.add-note-foot{display:flex;justify-content:flex-end;margin-top:6px}
+.add-note-btn{padding:6px 14px;border-radius:8px;background:var(--grad);border:none;cursor:pointer;font-size:11px;font-weight:600;color:#fff;box-shadow:0 4px 12px var(--pg)}
+
+/* ─── FLASHCARDS ─── */
+.flashcard{background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(6,182,212,.08));border:1px solid rgba(124,58,237,.2);border-radius:14px;padding:16px;text-align:center;cursor:pointer;margin-bottom:10px;transition:all .3s}
+.flashcard:hover{transform:scale(1.01)}
+.fc-q{font-size:12px;color:var(--t2);margin-bottom:7px}
+.fc-a{font-size:13px;font-weight:600;color:var(--t1);display:none}

@@ -1,0 +1,139 @@
+<!-- ─── CONFIRM MODAL ─── -->
+<div class="modal-overlay confirm-modal" id="confirmModal">
+<div class="modal" style="max-width:300px">
+  <div class="modal-title" id="confirmTitle">Confirm</div>
+  <div style="font-size:13px;color:var(--t3)" id="confirmMsg"></div>
+  <div class="confirm-btns">
+    <button class="btn-ghost" style="flex:1" onclick="window._confirmResolve&&window._confirmResolve(false);closeModal('confirmModal')">Cancel</button>
+    <button class="danger-btn" style="flex:1" id="confirmOkBtn" onclick="window._confirmResolve&&window._confirmResolve(true);closeModal('confirmModal')">Confirm</button>
+  </div>
+</div>
+</div>
+
+<!-- ─── TASK MODAL ─── -->
+<div class="modal-overlay" id="taskModal" onclick="if(event.target===this)closeModal('taskModal')">
+<div class="modal">
+  <div class="modal-drag"></div>
+  <button class="modal-close" onclick="closeModal('taskModal')">✕</button>
+  <div class="modal-title" id="taskModalTitle">✦ New Task</div>
+  <input type="hidden" id="editTaskId"/>
+  <div class="form-group">
+    <label class="form-label"><span class="form-label-dot"></span>Task</label>
+    <input class="form-input" id="mTitle" placeholder="Task likhein…" autocomplete="off"/>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label class="form-label"><span class="form-label-dot"></span>Priority</label>
+      <select class="form-input" id="mPri">
+        <option value="high">🔴 High</option>
+        <option value="mid" selected>🟡 Medium</option>
+        <option value="low">🟢 Low</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label"><span class="form-label-dot"></span>Category</label>
+      <select class="form-input" id="mCat">
+        <option value="work">💼 Work</option>
+        <option value="study">📚 Study</option>
+        <option value="personal">👤 Personal</option>
+        <option value="health">❤️ Health</option>
+        <option value="fitness">💪 Fitness</option>
+        <option value="finance">💰 Finance</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label class="form-label"><span class="form-label-dot"></span>Due Date</label>
+      <input class="form-input" type="date" id="mDue"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label"><span class="form-label-dot"></span>Recurring</label>
+      <select class="form-input" id="mRecur">
+        <option value="none">None</option>
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="weekdays">Weekdays</option>
+      </select>
+    </div>
+  </div>
+  <button class="btn-primary" style="width:100%;margin-top:4px" id="saveTaskBtn" onclick="saveTask()">Add Task ✦</button>
+</div>
+</div>
+
+<!-- ─── HABIT MODAL ─── -->
+<div class="modal-overlay" id="habitModal" onclick="if(event.target===this)closeModal('habitModal')">
+<div class="modal">
+  <div class="modal-drag"></div>
+  <button class="modal-close" onclick="closeModal('habitModal')">✕</button>
+  <div class="modal-title" id="habitModalTitle">🌱 New Habit</div>
+  <input type="hidden" id="editHabitIdx"/>
+  <div class="form-group">
+    <label class="form-label"><span class="form-label-dot"></span>Habit Name</label>
+    <input class="form-input" id="hName" placeholder="e.g. Morning Meditation" autocomplete="off"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label"><span class="form-label-dot"></span>Emoji</label>
+    <div style="display:flex;flex-wrap:wrap;gap:7px" id="emojiPicker">
+      <span class="emoji-opt active" onclick="pickEmoji(this,'🧘')">🧘</span>
+      <span class="emoji-opt" onclick="pickEmoji(this,'📚')">📚</span>
+      <span class="emoji-opt" onclick="pickEmoji(this,'💪')">💪</span>
+      <span class="emoji-opt" onclick="pickEmoji(this,'🏃')">🏃</span>
+      <span class="emoji-opt" onclick="pickEmoji(this,'💧')">💧</span>
+      <span class="emoji-opt" onclick="pickEmoji(this,'🌿')">🌿</span>
+      <span class="emoji-opt" onclick="pickEmoji(this,'✍️')">✍️</span>
+      <span class="emoji-opt" onclick="pickEmoji(this,'🎯')">🎯</span>
+      <span class="emoji-opt" onclick="pickEmoji(this,'😴')">😴</span>
+      <span class="emoji-opt" onclick="pickEmoji(this,'🍎')">🍎</span>
+      <span class="emoji-opt" onclick="pickEmoji(this,'📖')">📖</span>
+      <span class="emoji-opt" onclick="pickEmoji(this,'🧠')">🧠</span>
+    </div>
+  </div>
+  <button class="btn-primary" style="width:100%;margin-top:8px" onclick="saveHabit()">Save Habit 🌱</button>
+</div>
+</div>
+
+<!-- ─── SKILL MODAL ─── -->
+<div class="modal-overlay" id="skillModal" onclick="if(event.target===this)closeModal('skillModal')">
+<div class="modal">
+  <div class="modal-drag"></div>
+  <button class="modal-close" onclick="closeModal('skillModal')">✕</button>
+  <div class="modal-title" id="skillModalTitle">⚡ Add Skill</div>
+  <input type="hidden" id="editSkillIdx"/>
+  <div class="form-group">
+    <label class="form-label"><span class="form-label-dot"></span>Skill Name</label>
+    <input class="form-input" id="skName" placeholder="e.g. React.js" autocomplete="off"/>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label class="form-label"><span class="form-label-dot"></span>Icon</label>
+      <input class="form-input" id="skIcon" placeholder="⚛" maxlength="2"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label"><span class="form-label-dot"></span>Level</label>
+      <select class="form-input" id="skLvl">
+        <option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>Expert</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="form-label"><span class="form-label-dot"></span>Progress <span id="skPctLabel">50%</span></label>
+    <input type="range" id="skPct" min="0" max="100" value="50" style="width:100%" oninput="document.getElementById('skPctLabel').textContent=this.value+'%'"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label"><span class="form-label-dot"></span>Tags</label>
+    <input class="form-input" id="skTags" placeholder="e.g. Frontend, JS, UI"/>
+  </div>
+  <button class="btn-primary" style="width:100%;margin-top:4px" onclick="saveSkill()">Save Skill ⚡</button>
+</div>
+</div>
+
+<!-- ─── WISHLIST MODAL ─── -->
+<div class="modal-overlay" id="wishlistModal" onclick="if(event.target===this)closeModal('wishlistModal')">
+<div class="modal">
+  <div class="modal-drag"></div>
+  <button class="modal-close" onclick="closeModal('wishlistModal')">✕</button>
+  <div class="modal-title">💖 Reading Wishlist</div>
+  <div id="wishlist-items"></div>
+</div>
+</div>

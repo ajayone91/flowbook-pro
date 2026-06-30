@@ -1,0 +1,38 @@
+<!-- ─── FOCUS VIEW (full screen) ─── -->
+<div class="focus-view" id="focusView">
+  <div class="focus-topbar">
+    <div class="focus-status-badge"><div class="focus-status-dot"></div>FOCUS MODE</div>
+    <div style="display:flex;gap:6px">
+      <div class="focus-session-chips" id="focusSessDots"></div>
+      <button class="focus-quit" onclick="exitFocus()">✕ Exit</button>
+    </div>
+  </div>
+  <div class="focus-body">
+    <div class="focus-hero-txt" id="focusMotiveText">Deep Work Session</div>
+    <div style="font-size:10px;color:rgba(147,197,253,.35);margin-bottom:12px;text-align:center" id="focusMotiveSub">Stay focused. Every minute counts.</div>
+    <div class="focus-clock">
+      <svg class="focus-ring-svg" width="220" height="220" viewBox="0 0 220 220">
+        <circle cx="110" cy="110" r="100" fill="none" stroke="rgba(96,165,250,.08)" stroke-width="10"/>
+        <circle id="focusRingCircle" cx="110" cy="110" r="100" fill="none" stroke="url(#focusGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="628" stroke-dashoffset="628" transform="rotate(-90 110 110)"/>
+        <defs><linearGradient id="focusGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient></defs>
+      </svg>
+      <div class="focus-time-txt">
+        <div class="focus-time-num" id="focusTimeNum">25:00</div>
+        <div class="focus-time-phase" id="focusPhaseLabel">FOCUS</div>
+      </div>
+    </div>
+    <div class="focus-task-pill" id="focusTaskPill" onclick="toggleFocusTaskSel()">🎯 Select a task…</div>
+    <div id="focusTaskSel" style="background:rgba(4,10,28,.9);border:1px solid rgba(59,130,246,.18);border-radius:14px;padding:10px;max-width:340px;width:100%;margin-bottom:10px;display:none;max-height:160px;overflow-y:auto"></div>
+    <div class="focus-controls">
+      <button class="fc-btn fc-side" onclick="resetFocus()" title="Reset">↺</button>
+      <button class="fc-btn fc-main" id="focusPlayBtn" onclick="toggleFocus()">▶</button>
+      <button class="fc-btn fc-side" onclick="skipFocusPhase()" title="Skip">⏭</button>
+    </div>
+    <div class="focus-sessions" id="focusSessionDots" style="max-width:120px;margin:0 auto"></div>
+    <div style="margin-top:14px;display:flex;gap:8px">
+      <button class="rtool" onclick="setFocusDuration(25)" id="fd25">25 min</button>
+      <button class="rtool" onclick="setFocusDuration(45)" id="fd45">45 min</button>
+      <button class="rtool" onclick="setFocusDuration(60)" id="fd60">60 min</button>
+    </div>
+  </div>
+</div>
